@@ -1,0 +1,10 @@
+{
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": ["--ignore=E501,E226"],
+  "python.formatting.provider": "yapf",
+  "diagnostic.displayByAle": true,
+  "python.jediEnabled": true,
+  "python.venvPath": "~/anaconda3/envs/"
+}
