@@ -36,6 +36,7 @@ Plug 'maximbaz/lightline-ale'
 Plug 'benmills/vimux'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-commentary' 	" [count]gcc -> comment or uncomment total [count] lines.
+Plug 'tpope/vim-surround'
 Plug 'romainl/vim-cool'
 Plug 'thaerkh/vim-workspace'
 " Plug 'sheerun/vim-polyglot'
