@@ -6,7 +6,7 @@ enrongtsai
 This repository keeps my vim settings ,tmux configuration and other dotfiles.
 The configuration implements an IDE like python development environment on a terminal, which benefits cross-platform development on remote machines using ssh.
 
-<div style="text-align:center"><img src="https://github.com/enrongtsai/dotfiles/tree/master/assets/screenshot.png" width="150"></div>
+![image](assets/screenshot.png)
 
 ## useful plugin
 ### vim
