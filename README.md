@@ -3,7 +3,7 @@ enrongtsai
 <br>
 
 ### usage
-This repository keeps my vim settings ,tmux configuration and other dotfiles.
+This repository keeps my vim settings, tmux configuration and other dotfiles.
 The configuration implements an IDE like python development environment on a terminal, which benefits cross-platform development on remote machines using ssh.
 
 ![image](assets/screenshot.png)
