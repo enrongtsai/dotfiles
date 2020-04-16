@@ -170,4 +170,4 @@ fi
 LANG="en_US.UTF-8"
 LC_TIME="en_US.UTF-8"
 
-alias config='/usr/bin/git --git-dir=/home/enrong-tsai/.cfg/ --work-tree=/home/enrong-tsai'
+alias config ='/usr/bin/git --git-dir=/home/enrong-tsai/.cfg/ --work-tree=/home/enrong-tsai'

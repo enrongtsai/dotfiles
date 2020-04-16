@@ -32,14 +32,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'macthecadillac/lightline-gitdiff'
 Plug 'maximbaz/lightline-ale'
-" Plug 'sainnhe/artify.vim'
 Plug 'benmills/vimux'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-commentary' 	" [count]gcc -> comment or uncomment total [count] lines.
 Plug 'tpope/vim-surround'
 Plug 'romainl/vim-cool'
 Plug 'thaerkh/vim-workspace'
-" Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-python/python-syntax'
 Plug 'jeetsukumaran/vim-pythonsense'
@@ -97,7 +95,6 @@ call plug#end()
         set ttimeoutlen=50
         set updatetime=300
         set showtabline=2       "always show tabline
-        " set scrolloff=12        "number of context lines you would like to see above and below the cursor
         autocmd VimEnter,WinEnter,VimResized * let &scrolloff = (winheight(0)+1) / 3
         set wildmenu
         if !has('nvim')
@@ -111,6 +108,7 @@ call plug#end()
         set shiftwidth=4        " number of spaces to use for auto indent
         set autoindent          " copy indent from current line when starting a new line
         let g:indentLine_char = '┆'
+        let g:indentLine_conceallevel = 0
         " configure expanding of tabs for various file types
             au BufRead,BufNewFile *.py set expandtab
             au BufRead,BufNewFile *.c set noexpandtab
