@@ -1,7 +1,28 @@
 # Intro
-This repository keeps my vim settings, tmux configuration and other dotfiles.
-The configuration implements an IDE like python development environment on a terminal, which benefits cross-platform development on localhost and remote machines using SSH.
+This repository keeps my Vim settings, Tmux configuration and other dotfiles.
+The configuration implements an IDE like python development environment on a terminal, which benefits cross-platform development on localhost and remote machines using SSH. 
 
+### Useful utils
+- A persist history autosave workspace between sessions by self defined function and [thaerkh/vim-workspace](https://github.com/thaerkh/vim-workspace) plugin.
+
+  - Leaving Vim with `prefix` + `q` (auto-create if workspace hasn't create)
+  - Create/Remove workspace with `prefix` + `s`
+  - Entering workspace with only `vim` command in the workspace directory.
+
+- A self defined Vim mapping to save & execute current python file in a new create horizontal tmux pane by using [benmills/vimux](https://github.com/benmills/vimux) plugin.
+  - save & execute current python file `prefix` + `p`
+
+- Continuous saving of Tmux environment using [tmux-plugins/tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) & [tmux-plugins/tmux-continuum](https://github.com/tmux-plugins/tmux-continuum), when remote machines encounter an unexpected shutdown it will automatically restore the environment when Tmux started.
+  - Config the save interval with `set -g @continuum-save-interval '15'` in `~/.tmux.conf`. (default, 15 minutes) 
+
+- Seamless navigation between tmux panes and vim splits using [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+  - `<ctrl-h>` => Left
+  - `<ctrl-j>` => Down
+  - `<ctrl-k>` => Up
+  - `<ctrl-l>` => Right
+  - `<ctrl-\>` => Previous split
+
+### Screenshot
 <p align="center">
   <img src="assets/screenshot.png" width="700"/>
 </p>
@@ -39,6 +60,7 @@ echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $H
 ### Install plugins via [vim-plug](https://github.com/junegunn/vim-plug)
 
 Reload .vimrc and `:PlugInstall` to install plugins.
+
 **Note:**
 You can add new plugin to `~/.vimrc` with `Plug '.../...'` between `call plug#begin()` and `call plug#end()`.
 
