@@ -163,8 +163,11 @@ cnoreabbrev Qall qall
 
     "" set zero and minus to the begin and end of current line.
         nnoremap - $
-        nnoremap 0 ^
         vnoremap - $
+        onoremap - $
+        nnoremap 0 ^
+        vnoremap 0 ^
+        onoremap 0 ^
 
     "" switch mappings of # and *
         nnoremap # *
