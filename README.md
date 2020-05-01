@@ -3,6 +3,9 @@ This repository keeps my Vim settings, Tmux configuration and other dotfiles.
 The configuration implements an IDE like python development environment on a terminal, which benefits cross-platform development on localhost and remote machines using SSH. 
 
 ### Useful utils
+**Note:**
+The default Vim `<Leader>` is `\`, and the default Tmux `prefix` is `Ctrl-b`.
+
 - A persist history autosave workspace between sessions by self defined function and [thaerkh/vim-workspace](https://github.com/thaerkh/vim-workspace) plugin.
 
   - Leaving Vim with `<Leader>` + `q` (auto-create if workspace hasn't create)
@@ -23,10 +26,6 @@ The configuration implements an IDE like python development environment on a ter
   - `<ctrl-k>` => Up
   - `<ctrl-l>` => Right
   - `<ctrl-\>` => Previous split
-
-**Note:**
-The default `<Leader>` in Vim is `\`
-The default `prefix` in Tmux is `Ctrl-b`
 
 ### Screenshot
 <p align="center">
