@@ -1,12 +1,10 @@
-### author
-enrongtsai
-<br>
-
-### usage
+## Intro
 This repository keeps my vim settings, tmux configuration and other dotfiles.
-The configuration implements an IDE like python development environment on a terminal, which benefits cross-platform development on remote machines using ssh.
+The configuration implements an IDE like python development environment on a terminal, which benefits cross-platform development on localhost and remote machines using SSH.
 
-![image](assets/screenshot.png)
+<p align="center">
+  <img src="assets/screenshot.png" width="700"/>
+</p>
 
 ## useful plugin
 ### vim
