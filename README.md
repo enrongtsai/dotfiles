@@ -5,15 +5,17 @@ The configuration implements an IDE like python development environment on a ter
 ### Useful utils
 - A persist history autosave workspace between sessions by self defined function and [thaerkh/vim-workspace](https://github.com/thaerkh/vim-workspace) plugin.
 
-  - Leaving Vim with `prefix` + `q` (auto-create if workspace hasn't create)
-  - Create/Remove workspace with `prefix` + `s`
+  - Leaving Vim with `<Leader>` + `q` (auto-create if workspace hasn't create)
+  - Create/Remove workspace with `<Leader>` + `s`
   - Entering workspace with only `vim` command in the workspace directory.
 
-- A self defined Vim mapping to save & execute current python file in a new create horizontal tmux pane by using [benmills/vimux](https://github.com/benmills/vimux) plugin.
-  - save & execute current python file `prefix` + `p`
+- A self defined Vim command to save & execute current python file in a new create horizontal tmux pane by using [benmills/vimux](https://github.com/benmills/vimux) plugin.
+  - save & execute current python file with `<Leader>` + `p`
 
+- A self defined Tmux command to toggle a new window with `nvidia-smi` & `htop` splits. Useful for system-status watch while training models.
+    - New window for system-status watching with `prefix` + `W`
 - Continuous saving of Tmux environment using [tmux-plugins/tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) & [tmux-plugins/tmux-continuum](https://github.com/tmux-plugins/tmux-continuum), when remote machines encounter an unexpected shutdown it will automatically restore the environment when Tmux started.
-  - Config the save interval with `set -g @continuum-save-interval '15'` in `~/.tmux.conf`. (default, 15 minutes) 
+  - Config the save interval with `set -g @continuum-save-interval '15'` in `~/.tmux.conf`. (default, 15 minutes)
 
 - Seamless navigation between tmux panes and vim splits using [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
   - `<ctrl-h>` => Left
@@ -21,6 +23,10 @@ The configuration implements an IDE like python development environment on a ter
   - `<ctrl-k>` => Up
   - `<ctrl-l>` => Right
   - `<ctrl-\>` => Previous split
+
+**Note:**
+The default `<Leader>` in Vim is `\`
+The default `prefix` in Tmux is `Ctrl-b`
 
 ### Screenshot
 <p align="center">
