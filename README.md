@@ -15,8 +15,9 @@ The default Vim `<Leader>` is `\`, and the default Tmux `prefix` is `Ctrl-b`.
 - A self defined Vim command to save & execute current python file in a new create horizontal tmux pane by using [benmills/vimux](https://github.com/benmills/vimux) plugin.
   - save & execute current python file with `<Leader>` + `p`
 
-- A self defined Tmux command to toggle a new window with `nvidia-smi` & `htop` splits. Useful for system-status watch while training models.
-    - New window for system-status watching with `prefix` + `W`
+- A self defined Tmux command to toggle a new window with `nvidia-smi` & `htop` splits for monitor GPU, CPU and RAM usage. Useful system-status monitor while training models.
+    - Toggle a new window for monitor system-status with `prefix` + `W`
+
 - Continuous saving of Tmux environment using [tmux-plugins/tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) & [tmux-plugins/tmux-continuum](https://github.com/tmux-plugins/tmux-continuum), when remote machines encounter an unexpected shutdown it will automatically restore the environment when Tmux started.
   - Config the save interval with `set -g @continuum-save-interval '15'` in `~/.tmux.conf`. (default, 15 minutes)
 
