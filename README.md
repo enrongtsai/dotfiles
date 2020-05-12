@@ -13,7 +13,8 @@ The default Vim `<Leader>` is `\`, and the default Tmux `prefix` is `Ctrl-b`.
   - Entering workspace with only `vim` command in the workspace directory.
 
 - A self defined Vim command to save & execute current python file in a new create horizontal tmux pane by using [benmills/vimux](https://github.com/benmills/vimux) plugin.
-  - save & execute current python file with `<Leader>` + `p`
+  - save & execute current python file in a specified Conda env with `<Leader>` + `p`<br>
+    **(To change the execute environment, please reconfig the command in `.vimrc`)**
 
 - A self defined Tmux command to toggle a new window with `nvidia-smi` & `htop` splits for monitor GPU, CPU and RAM usage. Useful system-status monitor while training models.
     - Toggle a new window for monitor system-status with `prefix` + `W`
