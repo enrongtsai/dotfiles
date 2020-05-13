@@ -11,6 +11,11 @@
         let g:vimIsInTmux = 0
     endif
 
+    " if has('win64') || has('win32') || has('win16')
+    "     let g:whichOS = 'WINDOWS'
+    " else
+        let g:whichOS = toupper(substitute(system('uname'), '\n', '', ''))
+    " endif
 "***************************************
 " plugins
 "***************************************
@@ -38,7 +43,7 @@ Plug 'tpope/vim-commentary' 	" [count]gcc -> comment or uncomment total [count] 
 Plug 'tpope/vim-surround'
 Plug 'romainl/vim-cool'
 Plug 'thaerkh/vim-workspace'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'vim-python/python-syntax'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'heavenshell/vim-pydocstring'
@@ -47,6 +52,9 @@ Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'cjrh/vim-conda'
+if g:whichOS == 'DARWIN'
+    Plug 'ianding1/leetcode.vim'
+endif
 " Fuzzy search
     if isdirectory('/usr/local/opt/fzf')
         Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -502,8 +510,8 @@ cnoreabbrev Qall qall
         nmap <leader>rn <Plug>(coc-rename)
 
         " Formatting selected code.
-        xmap <leader>f  <Plug>(coc-format-selected)
-        nmap <leader>f  <Plug>(coc-format-selected)
+        xmap <space>f  <Plug>(coc-format-selected)
+        nmap <space>f  <Plug>(coc-format-selected)
 
         augroup mygroup
           autocmd!
@@ -573,6 +581,8 @@ cnoreabbrev Qall qall
 
     "" Fzf
         nnoremap <leader>b :Buffers<CR>
+        nnoremap <leader>f :Files<CR>
+        nnoremap <leader>h :History<CR>
 
     "" easymotion
         map , <Plug>(easymotion-prefix)
@@ -584,7 +594,7 @@ cnoreabbrev Qall qall
         " or
         " `s{char}{char}{label}`
         " Need one more keystroke, but on average, it may be more comfortable.
-        nmap <Plug>(easymotion-prefix)ss <Plug>(easymotion-overwin-f2)
+        nmap <Plug>(easymotion-prefix), <Plug>(easymotion-overwin-f2)
         "
         "" Turn on case-insensitive feature
         let g:EasyMotion_smartcase = 1
@@ -598,3 +608,12 @@ cnoreabbrev Qall qall
 
     " Vimux
         nnoremap <leader>p :w<CR>:call VimuxRunCommand("conda activate torch; py " . bufname("%"))<CR>
+
+    " leetcode.vim
+    if g:whichOS == 'DARWIN'
+        let g:leetcode_solution_filetype = 'python3'
+        let g:leetcode_browser = 'chrome'
+    endif
+
+    " auto-pairs
+        let g:AutoPairsFlyMode = 1
