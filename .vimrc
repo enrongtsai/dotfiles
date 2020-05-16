@@ -608,6 +608,7 @@ cnoreabbrev Qall qall
 
     " Vimux
         nnoremap <leader>p :w<CR>:call VimuxRunCommand("conda activate torch; py " . bufname("%"))<CR>
+        nnoremap <leader>P :w<CR>:call VimuxRunCommand("conda activate tf2; py " . bufname("%"))<CR>
 
     " leetcode.vim
     if g:whichOS == 'DARWIN'
