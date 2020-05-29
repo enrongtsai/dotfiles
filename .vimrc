@@ -52,9 +52,8 @@ Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'cjrh/vim-conda'
-if g:whichOS == 'DARWIN'
-    Plug 'ianding1/leetcode.vim'
-endif
+Plug 'ianding1/leetcode.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 " Fuzzy search
     if isdirectory('/usr/local/opt/fzf')
         Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -611,10 +610,13 @@ cnoreabbrev Qall qall
         nnoremap <leader>P :w<CR>:call VimuxRunCommand("conda activate tf2; py " . bufname("%"))<CR>
 
     " leetcode.vim
-    if g:whichOS == 'DARWIN'
         let g:leetcode_solution_filetype = 'python3'
-        let g:leetcode_browser = 'chrome'
-    endif
+        let g:leetcode_browser = 'firefox'
 
     " auto-pairs
         let g:AutoPairsFlyMode = 1
+
+    " markdown-preview.nvim
+        let g:mkdp_open_to_the_world = 1
+        let g:mkdp_open_ip = '127.0.0.1'
+        let g:mkdp_port = 8080
