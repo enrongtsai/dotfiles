@@ -1,0 +1,7 @@
+set colored-completion-prefix on
+set colored-stats on
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+"\t": menu-complete
+"\e[Z": menu-complete-backward
+set menu-complete-display-prefix on
