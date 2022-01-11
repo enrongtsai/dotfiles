@@ -9,6 +9,7 @@
         set mouse=a
     else
         let g:vimIsInTmux = 0
+        set mouse=a
     endif
 
     " if has('win64') || has('win32') || has('win16')
@@ -96,6 +97,7 @@ call plug#end()
         set nocompatible
         set showcmd             "show cmd in the rhs below
         set hidden	            "switching buffers w/o write into file
+        set clipboard=unnamed
         set cursorline
         set laststatus=2
         set noshowmode
@@ -132,6 +134,8 @@ call plug#end()
         set incsearch
         set ignorecase
         set smartcase
+    "" pastetoggle
+        set pastetoggle=<F2>
 
 "***************************************
 "" Abbreviations & mappings
@@ -608,6 +612,11 @@ cnoreabbrev Qall qall
     " Vimux
         nnoremap <leader>p :w<CR>:call VimuxRunCommand("conda activate torch; py " . bufname("%"))<CR>
         nnoremap <leader>P :w<CR>:call VimuxRunCommand("conda activate tf2; py " . bufname("%"))<CR>
+        if g:vimIsInTmux == 1
+            nnoremap <leader>C :w<CR>:call VimuxRunCommand("g++ -std=c++17 -Wall -g -Wextra -o tmp.out " . bufname("%") . ";./tmp.out; rm -rf tmp.out*"))<CR>
+        else
+            nnoremap <leader>C :w<CR>:!echo ====================================================; g++ -std=c++17 -Wall -g -Wextra -o tmp.out %; ./tmp.out; rm -rf tmp.out*<CR>
+        endif
 
     " leetcode.vim
         let g:leetcode_solution_filetype = 'python3'
