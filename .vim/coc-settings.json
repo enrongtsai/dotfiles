@@ -1,10 +1,36 @@
 {
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true,
-  "python.linting.flake8Args": ["--ignore=E501,E226"],
-  "python.formatting.provider": "yapf",
-  "diagnostic.displayByAle": true,
-  "python.jediEnabled": true,
-  "python.venvPath": "~/anaconda3/envs/"
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": false,
+    "python.linting.flake8Args": ["--ignore=E501,E226"],
+    "python.formatting.provider": "yapf",
+    "diagnostic.displayByAle": true,
+    "python.jediEnabled": true,
+    "python.venvPath": "~/anaconda3/envs/",
+    "languageserver": {
+        "ccls": {
+			"command": "ccls",
+			"filetypes": ["c", "cc", "cpp", "c++"],
+			"rootPatterns": [".ccls", "compile_commands.json", ".git/", ".root"],
+			"initializationOptions": {
+				"cache": {
+					"directory": ".cache/ccls"
+				},
+                "clang": {
+                    // from clang -v -fsyntax-only -x c++ /dev/null
+                    "extraArgs": [
+                        "-isystem/usr/local/include",
+                        "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1",
+                        "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include",
+                        "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
+                        "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+                        "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
+                    ],
+                    //From clang -print-resource-dir
+                    "resourceDir": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5"
+                },
+                "highlight": {"lsRanges": true }
+			}
+		}
+    }
 }
